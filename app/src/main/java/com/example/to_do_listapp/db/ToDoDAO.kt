@@ -17,5 +17,5 @@ interface ToDoDAO {
     fun insert(todo: ToDo)
 
     @Query("select * from ToDo_Table")
-    fun fetchData(): List<ToDo>
+    fun fetchData(): MutableList<ToDo>
 }

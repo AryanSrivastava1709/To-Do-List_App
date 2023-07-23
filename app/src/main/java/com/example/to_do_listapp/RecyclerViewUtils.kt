@@ -21,7 +21,7 @@ class ToDoListViewHolder(private val itemBinding: TodoListItemBinding
 /*TODO : Adding a Adapter*/
 
 class ToDoAdapter(
-    private val listOfTodos: MutableList<ToDo>
+    private var listOfTodos: MutableList<ToDo>
 ): RecyclerView.Adapter<ToDoListViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoListViewHolder {
         return ToDoListViewHolder(TodoListItemBinding.inflate(
@@ -36,6 +36,15 @@ class ToDoAdapter(
         holder.bindData(listOfTodos[position])
     }
 
+    fun updateData(newList: MutableList<ToDo>){
+        listOfTodos = newList
+        notifyDataSetChanged()
+    }
+
+    fun addNewItem(todo: ToDo){
+        listOfTodos.add(0,todo)
+        notifyItemInserted(0)
+    }
 }
 
 /*TODO 5: Add a click handle event*/
