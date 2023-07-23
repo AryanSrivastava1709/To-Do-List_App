@@ -14,7 +14,7 @@ class ToDoListViewHolder(private val itemBinding: TodoListItemBinding
         itemBinding.itemToDo.isChecked = todo.isMarkedDone
         itemBinding.itemToDoTitle.text = todo.title
         itemBinding.itemToDoDesc.text = todo.desc
-        itemBinding.itemToDoDate.text = todo.date
+        itemBinding.itemToDoDate.text = todo.date.toString()
     }
 }
 

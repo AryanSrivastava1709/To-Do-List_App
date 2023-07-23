@@ -12,7 +12,7 @@ data class ToDo(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
 
-    val isMarkedDone: Boolean,
+    val isMarkedDone: Boolean=false,
 
     val title: String,
 
